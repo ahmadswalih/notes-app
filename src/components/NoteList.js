@@ -12,7 +12,7 @@ const NoteList = ({ notes, addNotes, deleteHandle }) => {
         ))
       ) : (
         <div>
-          <p className="error-text">404</p>
+          <p className="error-text">No Notes Found </p>
         </div>
       )}
     </div>

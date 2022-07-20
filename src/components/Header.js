@@ -1,7 +1,6 @@
 import React from "react";
 
 const Header = ({ handleDarkMode, isDark }) => {
-  console.log(isDark);
   return (
     <div className="header">
       <h1>NOTES</h1>

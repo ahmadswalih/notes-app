@@ -111,12 +111,7 @@ textarea:focus {
 .error-text{
   color:rgb(215, 210, 52);
   font-family: 'Righteous',cursive;
-  font-size: 8em;
+  font-size: 2em;
   text-align: center;
   margin-top: none;
-}
-.subText{
-  text-align: center;
-  margin-top: 0;
-  font-size: 2em;
 }

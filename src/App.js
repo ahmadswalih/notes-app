@@ -7,42 +7,20 @@ import "react-toastify/dist/ReactToastify.css";
 import Search from "./components/Search";
 import Header from "./components/Header";
 const App = () => {
-  const [notes, setNotes] = useState([
-    {
-      id: nanoid(),
-      text: "This is my first Note",
-      date: "20/07/2022",
-    },
-    {
-      id: nanoid(),
-      text: "This is my second Note",
-      date: "20/07/2022",
-    },
-    {
-      id: nanoid(),
-      text: "This is my third Note",
-      date: "20/07/2022",
-    },
-    {
-      id: nanoid(),
-      text: "This is my forth Note",
-      date: "20/07/2022",
-    },
-  ]);
+  const [notes, setNotes] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [darkMode, setDarkMode] = useState(false);
 
   //Retrieve the data from the localStorage on the first loading
+  const savedNotes = JSON.parse(localStorage.getItem("react-notes-app-data"));
   useEffect(() => {
-    const savedNotes = JSON.parse(localStorage.getItem("react-note-app-data"));
     if (savedNotes) {
       setNotes(savedNotes);
     }
   }, []);
 
-  //Saves the notes in localStorage
   useEffect(() => {
-    localStorage.setItem("react-note-app-data", JSON.stringify(notes));
+    localStorage.setItem("react-notes-app-data", JSON.stringify(notes));
   }, [notes]);
 
   //AddNotes Function
