@@ -6,11 +6,28 @@
   </a>
 </p>
 
-> Notes is an application where user can add notes and view their notes. The application uses localStorage to Store the notes.Users also can delete their notes. The application also has dark mode and light mode option.
+> Notes is an application where user can add notes and view their notes. 
+
+
+## Overview
+The application created Using Reactjs and the application uses localStorage to store the notes data. Every Note is saved as an array and each array has the property of text,date and a unique id. Every time a new Note is created a unique id and date will be assigned automatically. for unique id uses nanoId package and for date uses javascript function new Date(). 
+
+User can only add notes upto 200 chracters .if the created note is above 200 character a toast will be shown to the user . The number of Characters remaining for the note will be shown in the footer of each note card.
+ 
+In the top , there is a search optoin where users can search notes based on the notes text.
+
+## ✨ [Live Demo](https://notes-app-sw.netlify.app/)
+## Screenshots
+<h4>Home Page</h4>
+<img src="/img/Screenshot%20from%202022-07-20%2020-56-45.png"/>
+<h4>Dark Mode</h4>
+<img src="img/Screenshot%20from%202022-07-20%2020-56-51.png"/>
+
+
+
 
 ### 🏠 [Homepage](/src/App.js)
 
-### ✨ [Demo](https://notes-app-sw.netlify.app/)
 
 ## Install
 
