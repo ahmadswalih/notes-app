@@ -2,7 +2,8 @@ import { nanoid } from "nanoid";
 import React, { useState } from "react";
 import "./App.css";
 import NoteList from "./components/NoteList";
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const App = () => {
   const [notes, setNotes] = useState([
     {
@@ -26,9 +27,33 @@ const App = () => {
       date: "20/07/2022",
     },
   ]);
+
+  //AddNotes Function
+  const addNotes = (text) => {
+    const date = new Date();
+    const newNote = {
+      id: nanoid(),
+      text: text,
+      date: date.toLocaleDateString(),
+    };
+    const newNotes = [newNote, ...notes];
+    setNotes(newNotes);
+  };
+
+  //DeletNotes Function
+  const DeletNotes = (id) => {
+    setNotes(notes.filter((note) => note.id !== id));
+  };
+
   return (
     <div className="container">
-      <NoteList notes={notes} />
+      <ToastContainer />
+      <NoteList
+        deleteHandle={DeletNotes}
+        addNotes={addNotes}
+        setNotes={setNotes}
+        notes={notes}
+      />
     </div>
   );
 };
