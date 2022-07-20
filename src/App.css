@@ -20,7 +20,7 @@ code {
 }
 
 .dark-mode {
-  background-color: black;
+  background-color:black;
 }
 
 .dark-mode h1 {
@@ -95,7 +95,7 @@ textarea:focus {
   align-items: center;
   background-color: rgb(233, 233, 233);
   border-radius: 10px;
-  padding: 5px;
+  padding: 10px;
   margin-bottom: 1.5em;
 }
 

@@ -5,6 +5,7 @@ import NoteList from "./components/NoteList";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Search from "./components/Search";
+import Header from "./components/Header";
 const App = () => {
   const [notes, setNotes] = useState([
     {
@@ -29,6 +30,7 @@ const App = () => {
     },
   ]);
   const [searchText, setSearchText] = useState("");
+  const [darkMode, setDarkMode] = useState(false);
   //AddNotes Function
   const addNotes = (text) => {
     const date = new Date();
@@ -47,17 +49,20 @@ const App = () => {
   };
 
   return (
-    <div className="container">
-      <ToastContainer />
-      <Search handleSearch={setSearchText} />
-      <NoteList
-        deleteHandle={DeletNotes}
-        addNotes={addNotes}
-        setNotes={setNotes}
-        notes={notes.filter((note) =>
-          note.text.toLowerCase().includes(searchText)
-        )}
-      />
+    <div className={`${darkMode && "dark-mode"}`}>
+      <div className="container">
+        <ToastContainer />
+        <Header handleDarkMode={setDarkMode} isDark={darkMode} />
+        <Search handleSearch={setSearchText} />
+        <NoteList
+          deleteHandle={DeletNotes}
+          addNotes={addNotes}
+          setNotes={setNotes}
+          notes={notes.filter((note) =>
+            note.text.toLowerCase().includes(searchText)
+          )}
+        />
+      </div>
     </div>
   );
 };
