@@ -1,5 +1,5 @@
 import { nanoid } from "nanoid";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import NoteList from "./components/NoteList";
 import { ToastContainer } from "react-toastify";
@@ -31,6 +31,20 @@ const App = () => {
   ]);
   const [searchText, setSearchText] = useState("");
   const [darkMode, setDarkMode] = useState(false);
+
+  //Retrieve the data from the localStorage on the first loading
+  useEffect(() => {
+    const savedNotes = JSON.parse(localStorage.getItem("react-note-app-data"));
+    if (savedNotes) {
+      setNotes(savedNotes);
+    }
+  }, []);
+
+  //Saves the notes in localStorage
+  useEffect(() => {
+    localStorage.setItem("react-note-app-data", JSON.stringify(notes));
+  }, [notes]);
+
   //AddNotes Function
   const addNotes = (text) => {
     const date = new Date();
