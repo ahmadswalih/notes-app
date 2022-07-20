@@ -6,9 +6,15 @@ const NoteList = ({ notes, addNotes, deleteHandle }) => {
   return (
     <div className="notes-list">
       <AddNote addNotes={addNotes} />
-      {notes.map((note) => (
-        <Note deleteHandle={deleteHandle} key={note.id} note={note} />
-      ))}
+      {notes.length > 0 ? (
+        notes.map((note) => (
+          <Note deleteHandle={deleteHandle} key={note.id} note={note} />
+        ))
+      ) : (
+        <div>
+          <p className="error-text">404</p>
+        </div>
+      )}
     </div>
   );
 };

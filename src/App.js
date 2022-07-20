@@ -4,11 +4,12 @@ import "./App.css";
 import NoteList from "./components/NoteList";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Search from "./components/Search";
 const App = () => {
   const [notes, setNotes] = useState([
     {
       id: nanoid(),
-      text: "This is my firest Note",
+      text: "This is my first Note",
       date: "20/07/2022",
     },
     {
@@ -27,7 +28,7 @@ const App = () => {
       date: "20/07/2022",
     },
   ]);
-
+  const [searchText, setSearchText] = useState("");
   //AddNotes Function
   const addNotes = (text) => {
     const date = new Date();
@@ -48,11 +49,14 @@ const App = () => {
   return (
     <div className="container">
       <ToastContainer />
+      <Search handleSearch={setSearchText} />
       <NoteList
         deleteHandle={DeletNotes}
         addNotes={addNotes}
         setNotes={setNotes}
-        notes={notes}
+        notes={notes.filter((note) =>
+          note.text.toLowerCase().includes(searchText)
+        )}
       />
     </div>
   );
