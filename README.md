@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to Notes 👋</h1>
+<h1 align="center">Welcome to Shorty 👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
   <a href="/License" target="_blank">
@@ -6,7 +6,7 @@
   </a>
 </p>
 
-> Notes is an application where user can add notes and view their notes. 
+> Shorty is an application where user can add short notes upto 200 characters , view their notes and even copy them.
 
 
 ## Overview
