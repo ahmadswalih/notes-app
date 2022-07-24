@@ -4,7 +4,7 @@ import { MdDarkMode, MdLightMode } from "react-icons/md";
 const Header = ({ handleDarkMode, isDark }) => {
   return (
     <div className="header">
-      <h1>NOTES</h1>
+      <h1>Shorty</h1>
       <button
         className="modeBtn"
         onClick={() => handleDarkMode((dark) => !dark)}
