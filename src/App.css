@@ -6,6 +6,7 @@ body {
     'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #fff;
 }
 
 code {
@@ -20,7 +21,7 @@ code {
 }
 
 .dark-mode {
-  background-color:black;
+  background-color:#333;
 }
 
 .dark-mode h1 {
@@ -63,7 +64,11 @@ textarea:focus {
   border-radius: 15px;
   padding: 5px 10px 5px 10px;
 }
-
+.modeBtn{
+  background: none;
+  border: none;
+  padding: 5px 10px 5px 10px;
+}
 .save:hover {
   background-color: #ededed;
   cursor: pointer;
@@ -115,4 +120,10 @@ textarea:focus {
   font-size: 2em;
   text-align: center;
   margin-top: none;
+}
+.icons-div{  
+display: flex;
+flex-direction: row;  
+justify-content: space-between;
+align-items: flex-end
 }

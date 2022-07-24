@@ -9,19 +9,24 @@ import Header from "./components/Header";
 const App = () => {
   const [notes, setNotes] = useState([]);
   const [searchText, setSearchText] = useState("");
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   //Retrieve the data from the localStorage on the first loading
   const savedNotes = JSON.parse(localStorage.getItem("react-notes-app-data"));
+  const isDarkMode = JSON.parse(localStorage.getItem("isDarkMode"));
   useEffect(() => {
     if (savedNotes) {
       setNotes(savedNotes);
+    }
+    if (isDarkMode) {
+      setDarkMode(isDarkMode);
     }
   }, []);
 
   useEffect(() => {
     localStorage.setItem("react-notes-app-data", JSON.stringify(notes));
-  }, [notes]);
+    localStorage.setItem("isDarkMode", JSON.stringify(darkMode));
+  }, [notes, darkMode]);
 
   //AddNotes Function
   const addNotes = (text) => {
@@ -43,7 +48,7 @@ const App = () => {
   return (
     <div className={`${darkMode && "dark-mode"}`}>
       <div className="container">
-        <ToastContainer />
+        <ToastContainer draggable position={"bottom-left"} />
         <Header handleDarkMode={setDarkMode} isDark={darkMode} />
         <Search handleSearch={setSearchText} />
         <NoteList
