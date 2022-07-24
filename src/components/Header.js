@@ -12,10 +12,10 @@ const Header = ({ handleDarkMode, isDark }) => {
         {isDark ? (
           <MdLightMode
             color="white"
-            style={{ width: "30px", height: "30px" }}
+            style={{ width: "30px", height: "30px",cursor:"pointer" }}
           />
         ) : (
-          <MdDarkMode style={{ width: "30px", height: "30px" }} />
+          <MdDarkMode style={{ width: "30px", height: "30px",cursor:"pointer" }} />
         )}
       </button>
     </div>
